@@ -1,10 +1,7 @@
 FROM ruby:2.2.4-slim
 
 # deps
-RUN apt-get update -qq && apt-get install -y \
-  build-essential \
-  git \
-  vim
+RUN apt-get update -qq && apt-get install -y build-essential git vim libpq-dev
 
 # Environment variables
 ENV APP_HOME=/usr/src/app
