@@ -1,8 +1,12 @@
 FROM ruby:2.4.1-slim
 
 # deps
-RUN apt-get update -qq && apt-get install -y build-essential git vim libpq-dev \
-  nodejs bash-completion
+RUN apt-get update -qq && \
+    apt-get install -y build-essential git vim libpq-dev \
+                       bash-completion curl
+# node source
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install nodejs
 
 # Environment variables
 ENV APP_HOME=/usr/src/app
