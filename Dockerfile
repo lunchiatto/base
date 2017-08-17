@@ -10,6 +10,7 @@ RUN apt-get install nodejs
 
 # Environment variables
 ENV APP_HOME=/usr/src/app
+RUN gem install bundler -v 1.15.3
 ENV BUNDLE_WITHOUT=development:test
 ENV BUNDLE_FROZEN=true
 RUN bundle config --global jobs 8
